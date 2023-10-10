@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body h1, body h2, body h3 body a{
+    font-family:  'Rosarivo', serif;
+}
+body p{
+    font-family: 'Rosario', sans-serif;
+}
+
+body{
+    background-image:url(./images/background.jpg);
+    background-size: 75%;
+    height: auto;
+    width: 100vw;
+}
+.wrapper{
+    display: grid;
+    margin: 0 auto;
+    padding: 0;
+    grid-template-columns:repeat(5, 1fr) ;
+    grid-row: auto;
+}
