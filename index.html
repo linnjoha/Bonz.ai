@@ -14,47 +14,83 @@
       referrerpolicy="no-referrer"
     />
     <!--fonts-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rosario&family=Rosarivo&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rosario&family=Rosarivo&display=swap"
+      rel="stylesheet"
+    />
   </head>
+
   <body>
     <div class="wrapper">
       <nav class="navbar">
         <div class="navbar__dropdown">
-            <i class="fa-solid fa-bars fa-xl">
-            </i>
-            <ul>
-                <li><a href="#"><span>-HOME</span></a></li>
-                <li><a href="./about.html">-ABOUT</a></li>
-                <li><a href="./booking.html">-BOOKING</a></li>
-              </ul>
+          <i class="fa-solid fa-bars fa-xl"> </i>
+          <ul>
+            <li>
+              <a href="#"><span>-HOME</span></a>
+            </li>
+            <li><a href="./about.html">-ABOUT</a></li>
+            <li><a href="./booking.html">-BOOKING</a></li>
+          </ul>
         </div>
         <div class="navbar__logotype">
           <h2>BONZ.AI</h2>
           <i class="fa-solid fa-tree"></i>
         </div>
 
-         <ul class="navbar__desktop">
-          <li><a href="">HOME</a></li>
-          <li><a href="">ABOUT</a></li>
-          <li><a href="">BOOKING</a></li>
-        </ul> 
+        <div class="navbar__desktop">
+          <a href="#"><span>HOME</span></a>
+          <a href="./about.html">ABOUT</a>
+          <a href="./booking.html">BOOKING</a>
+        </div>
       </nav>
 
       <main class="content">
         <section class="topblock">
-            <video controls autoplay src="./images/video (1080p).mp4">
-            </video>
-            <div class="topblock__videotext">
+          <video
+            controls
+            autoplay
+            muted
+            loop
+            src="./images/video (1080p).mp4"
+          ></video>
+          <div class="topblock__videotext">
             <h2>WHERE TECH MEETS NATURE</h2>
             <button class="btn">
-              <a  class="btn__text" href="./booking.html">BOOK YOUR STAY TODAY</a>
+              <a class="btn__text" href="./booking.html"
+                >BOOK YOUR STAY TODAY</a
+              >
             </button>
-            </div>
-        </section> 
+          </div>
+        </section>
+      </main>
 
-        
+      <footer>
+        <div class="navbar__logotype">
+          <h2>BONZ.AI</h2>
+          <i class="fa-solid fa-tree"></i>
+        </div>
+
+        <section class="contact">
+        <div>
+          <p>
+            Adress <br />
+            out in the woods 1000 <br />
+            31100 Sweden
+          </p>
+        </div>
+        <div>
+            <p>Tel: +4613371337</p>
+            <p>
+              E:mail<a href="mailto:contact@bonzai.com">contact@bonzai.com</a>
+            </p>
+          </div>
+        </section>
+      </footer>
+
+      <!--
         <article class="middleblock">
           <h2></h2>
           <p></p>
@@ -84,8 +120,7 @@
           <figure class="gallery__box">
             <p>description</p>
           </figure>
-        </section>
-      </main>
+        </section>-->
     </div>
   </body>
 </html>

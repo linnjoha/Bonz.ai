@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+html{
+    overflow-x: hidden;
+}
 
 body h1,
 body h2,
@@ -17,7 +20,7 @@ body {
   background-image: url(./images/background.jpg);
   background-size: 75%;
   height: auto;
-  width: 100vw;
+  width:100vw;
 }
 .wrapper {
   display: grid;
@@ -26,7 +29,7 @@ body {
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: 4.3rem auto;
 }
-.navbar {
+.navbar{
   display: grid;
   grid-column: 1/6;
   grid-row: 1/2;
@@ -52,7 +55,7 @@ body {
 }
 .navbar__dropdown {
   height: auto;
-  width:min-content;
+  width: min-content;
   display: flex;
   flex-direction: column;
 }
@@ -62,24 +65,40 @@ body {
 .navbar__dropdown ul {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   min-width: 10%;
   height: 10rem;
   display: none;
   background-color: rgba(103, 93, 71, 0.8);
   position: absolute;
+  z-index: 2;
 }
+
 .navbar__dropdown a {
   color: white;
   text-decoration: none;
-  line-height: 2;
+line-height: 3;
+  cursor: pointer;
+}
+.navbar__dropdown a:hover{
+    color:rgb(217, 217, 217);
 }
 .navbar__dropdown i {
- margin-top: 1rem;
+  margin-top: 1rem;
 }
 .navbar__dropdown:hover ul {
   display: block;
   background-color: rgba(103, 93, 71, 0.8);
+}
+.navbar__desktop a{
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+.navbar__desktop a:hover{
+    color: rgb(217, 217, 217);
+}
+.navbar__desktop span{
+    color:black;
 }
 .navbar__desktop {
   display: none;
@@ -130,11 +149,55 @@ video {
   text-decoration: none;
   font-size: 0.6rem;
 }
-.middleblock {
-  grid-row: 3/4;
-  width: 100%;
-  min-height: 15rem;
+
+footer{
+  position: fixed;
+  bottom:0;
   display: flex;
-  border-radius: 0.25rem;
-  background: rgba(217, 217, 217, 0.8);
+  background-color: rgb(217, 217, 217);
+  width: 100vw;
+  justify-content: space-between;
+  height: min-content;
+}
+footer .navbar__logotype{
+    color:  rgb(103, 93, 71);
+}
+.contact{
+    margin-right: 3%;
+    display: flex;
+}
+.contact a{
+    color: black;
+    text-decoration: none;
+}
+.contact div{
+    display: flex;
+    flex-direction: column;
+    padding: .3rem;
+}
+.contact p{
+    font-size: .8rem;
+}
+
+@media screen and (min-width: 650px) {
+  .navbar__dropdown {
+    display: none;
+  }
+  .navbar__desktop{
+    display: flex;
+    justify-content: space-between;
+    width:30%;
+    margin-right: 33%;
+  }
+  .navbar__logotype{
+    justify-self: baseline;
+    flex-direction: row-reverse;
+  }
+  .navbar{
+    display: flex;
+    width: 100vw;
+    align-items: center;
+    justify-content: space-between;
+ 
+  }
 }
