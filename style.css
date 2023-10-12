@@ -187,7 +187,7 @@ footer .navbar__logotype {
   flex-direction: column;
   text-align: center;
   margin: 0 auto;
- 
+
   padding: 2rem;
   width: 100vw;
   min-height: 25%;
@@ -202,6 +202,91 @@ footer .navbar__logotype {
 }
 .about p {
   max-width: 500px;
+}
+
+.activities{
+
+    height: auto;
+    row-gap: 1rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows:min-content min-content auto ;
+    grid-template-areas:
+     ". title title ."
+     ". text text ."
+     ". yoga hiking ."
+     ". camp cooking ."
+    ;
+    background-color:  rgba(103, 93, 71, 0.919);
+    text-align: center;
+    padding-bottom: 2rem;
+    padding-top: 2%;
+}
+
+.activities h2{
+    grid-area: title;
+    font-weight: 300;
+}
+.activities i, .activities h2{
+    color:rgba(217, 217, 217, 0.7);
+}
+.activities p{
+    font-size:.8rem ;
+    font-weight: 600;
+    color: #000000c7;
+}
+.activities__infotext{
+    grid-area: text;
+    font-weight: 500;
+   
+}
+.activities__camp,
+.activities__cooking,
+.activities__hiking,
+.activities__yoga{
+  max-width: 300px;
+}
+.activities__yoga{
+    grid-area: yoga;
+}
+.activities__hiking{
+    grid-area: hiking;
+}
+.activities__camp{
+    grid-area: camp;
+  
+}
+.activities__cooking{
+    grid-area: cooking;
+}
+
+.gallery{
+  max-width: 100vw;
+  background-color: rgba(217, 217, 217, 0.7);
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  flex-direction: column;
+}
+.gallery__box1{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  background-image:url(./images/pexels-anastasia-shuraeva-7663303.jpg);
+  background-size: 50%;
+  background-repeat: no-repeat;
+  height: 200px;
+  
+}
+.gallery__box1 p{
+  width: 50%;
+  text-align: center;
+
 }
 
 
