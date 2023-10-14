@@ -6,7 +6,8 @@
 
 body h1,
 body h2,
-body h3 body a {
+body h3,
+body a {
   font-family: "Rosarivo", serif;
 }
 body p {
@@ -15,7 +16,7 @@ body p {
 
 body {
   background-image: url(./images/background.jpg);
-  background-size:cover;
+  background-size: cover;
   height: auto;
   width: 100vw;
 }
@@ -24,17 +25,20 @@ body {
   display: grid;
   margin: 0 auto;
   padding: 0;
-  width:100vw;
+  width: 100vw;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: 4.3rem auto;
 }
 .navbar {
   display: grid;
+  position: fixed;
+  width: 100%;
   grid-column: 1/6;
   grid-row: 1/2;
-  background-color: rgba(103, 93, 71, 0.8);
+  background-color: rgba(103, 93, 71, 0.9);
   color: rgb(217, 217, 217);
   min-height: 4.3rem;
+  z-index: 1;
 }
 .navbar__logotype {
   text-align: center;
@@ -53,8 +57,7 @@ body {
   font-weight: 300;
 }
 .navbar__dropdown {
-  height: auto;
-  width: min-content;
+
   display: flex;
   flex-direction: column;
 }
@@ -62,8 +65,7 @@ body {
   color: black;
 }
 .navbar__dropdown ul {
-  display: flex;
-  flex-direction: column;
+  padding-top: 1rem;
   min-width: 10%;
   height: 10rem;
   display: none;
@@ -71,7 +73,6 @@ body {
   position: absolute;
   z-index: 2;
 }
-
 .navbar__dropdown a {
   color: white;
   text-decoration: none;
@@ -104,32 +105,26 @@ body {
 }
 
 .topblock {
-  width: 100vw;
   grid-column: 1/6;
   grid-row: 2/3;
   margin: 0;
-  padding-left: 10%;
-  padding-right: 10%;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: rgba(217, 217, 217, 0.8);
 }
 video {
   max-width: 100%;
-  height:auto;
+  height: auto;
+}
 
-}
-.topblock__videotext {
-  max-width: 100%;
-  height: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  
-}
-.topblock__videotext h2 {
-  padding: 1%;
-  color:rgb(103, 93, 71);
-  max-width: 380px;
+.videotext,
+.news h2 {
+  font-weight: 300;
+  font-size: 2.2rem;
+  color: rgb(103, 93, 71);
 }
 .btn {
   background-color: rgb(103, 93, 71);
@@ -140,25 +135,42 @@ video {
   max-width: 180px;
   height: auto;
   margin: 1%;
+  cursor: pointer;
 }
-.btn__text {
-  line-height: 100%;
-  color: rgba(255, 255, 255, 0.821);
+.btn:hover {
+  opacity: 0.8;
+  transition: 0.3s;
+}
+.btn a,
+.btn i {
+  color: rgb(217, 217, 217);
   text-decoration: none;
-  font-size: 0.6rem;
+}
+.news {
+  grid-column: 1/6;
+  grid-row: 3/4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(217, 217, 217, 0.8);
+}
+.news p {
+  padding: 1rem;
 }
 
 footer {
   grid-column: 1/6;
-  margin:0;
+  grid-row: 4/5;
+  margin: 0;
   padding: 0;
-  background-color:rgba(217, 217, 217, 0.8);
+  background-color: rgba(217, 217, 217, 0.8);
   max-height: 350px;
-  width:100%;
+  width: 100vw;
   display: flex;
   flex-direction: column;
- align-items: center;
- justify-content:center;
+  align-items: center;
+  justify-content: center;
 }
 footer .navbar__logotype {
   padding: 1rem;
@@ -183,14 +195,14 @@ footer .navbar__logotype {
 /****** ABOUT-STYLING START*****/
 
 .about {
+  grid-column: 1/6;
+  grid-row: 2/3;
+  min-height: 250px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   text-align: center;
-  margin: 0 auto;
-  width: 100vw;
-  min-height: 20%;
   background-color: rgba(217, 217, 217, 0.8);
 }
 .about h1 {
@@ -203,88 +215,79 @@ footer .navbar__logotype {
 .about p {
   max-width: 500px;
 }
-.activities{
-    height: auto;
-    row-gap: 1rem;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows:min-content min-content auto ;
-    grid-template-areas:
-     ". title title ."
-     ". text text ."
-     ". yoga hiking ."
-     ". camp cooking ."
-    ;
-    background-color:  rgba(103, 93, 71, 0.919);
-    text-align: center;
-    padding-bottom: 2rem;
-    padding-top: 2%;
+.activities {
+  grid-column: 1/6;
+  grid-row: 3/4;
+  row-gap: 1rem;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: min-content min-content auto;
+  grid-template-areas:
+    ". title title ."
+    ". text text ."
+    ". yoga hiking ."
+    ". camp cooking .";
+  background-color: rgba(103, 93, 71, 0.919);
+  text-align: center;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
 }
 
-.activities h2{
-    grid-area: title;
-    font-weight: 300;
+.activities h2 {
+  grid-area: title;
+  font-weight: 300;
 }
-.activities i, .activities h2{
-    color:rgba(217, 217, 217, 0.7);
+.activities i,
+.activities h2 {
+  color: rgba(217, 217, 217, 0.7);
 }
-.activities p{
-    font-size:.8rem ;
-    font-weight: 600;
-    color: #000000c7;
+.activities p {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.78);
 }
-.activities__infotext{
-    grid-area: text;
-    font-weight: 500;
-   
+.activities__infotext {
+  grid-area: text;
+  font-weight: 500;
 }
 .activities__camp,
 .activities__cooking,
 .activities__hiking,
-.activities__yoga{
+.activities__yoga {
   max-width: 300px;
 }
-.activities__yoga{
-    grid-area: yoga;
+.activities__yoga {
+  grid-area: yoga;
 }
-.activities__hiking{
-    grid-area: hiking;
+.activities__hiking {
+  grid-area: hiking;
 }
-.activities__camp{
-    grid-area: camp;
-  
+.activities__camp {
+  grid-area: camp;
 }
-.activities__cooking{
-    grid-area: cooking;
+.activities__cooking {
+  grid-area: cooking;
 }
-
-.gallery{
-  width: 100vw;
-  height: auto;
+.gallery {
+  grid-column: 1/6;
+  grid-row: 4/5;
   background-color: rgba(217, 217, 217, 0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-  flex-direction: column;
 }
-.gallery__box{
+.gallery__box {
   display: flex;
   align-items: center;
-  width: 100%;  
 }
-.gallery__box img{
+.gallery__box img {
   width: 50%;
 }
-.gallery__box p{
+.gallery__box p {
   width: 50%;
   height: auto;
   text-align: center;
 }
 /***booking styling***/
-.bookingTop{
+.bookingTop {
   grid-column: 1/6;
   grid-row: 2/3;
   display: flex;
@@ -294,17 +297,18 @@ footer .navbar__logotype {
   text-align: center;
   background-image: url(./images/booking.jpg);
   background-repeat: no-repeat;
- background-size: cover;
- background-position: center;
- min-height: 300px;
+  background-size: cover;
+  background-position: center;
+  min-height: 300px;
 }
-.bookingTop h1{
- background-color: rgba(217, 217, 217, 0.6);
+.bookingTop h1 {
+  background-color: rgba(217, 217, 217, 0.6);
 }
-.booking{
+.booking {
   padding: 2rem;
   background-color: rgba(217, 217, 217, 0.8);
   grid-column: 1/6;
+  grid-row: 3/4;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -312,67 +316,71 @@ footer .navbar__logotype {
   text-align: center;
   row-gap: 1rem;
 }
-.booking h2{
+.booking h2 {
   color: rgba(103, 93, 71, 0.877);
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
-.booking p{
+.booking p {
   max-width: 500px;
 }
-.booking__block{
+.booking__info > * {
+  padding: 1rem;
+}
+.booking__block {
   background-color: rgba(255, 255, 255, 0.85);
   text-align: left;
   display: flex;
   flex-direction: column;
-  row-gap: .2rem;
-  width:60%;
+  row-gap: 0.2rem;
+  width: 60%;
+  min-width: 200px;
   max-width: 450px;
-  padding: .5rem;
+  padding: 0.5rem;
   border-radius: 2px;
 }
-.booking__selectbox{
+.booking__selectbox {
   border: 1px solid rgba(103, 93, 71, 0.877);
   border-radius: 2px;
   min-width: 33%;
   max-width: 230px;
-  padding: .5rem;
+  padding: 0.5rem;
 }
-.booking__selectbox span{
-  color:gray;
-
+.booking__selectbox span {
+  color: gray;
 }
-.booking i{
+.booking i {
   color: rgba(103, 93, 71, 0.877);
 }
-.booking .btn{
+.booking .btn {
+  min-width: 56px;
   border-radius: 2px;
-  color: rgba(217, 217, 217, 0.8);
+  border: none;
+  color: rgba(255, 255, 255, 0.821);
 }
 
-
-/*.about {
+.booking__gallery {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  text-align: center;
-  margin: 0 auto;
-  width: 100vw;
-  min-height: 20%;
-  background-color: rgba(217, 217, 217, 0.8);
+  row-gap: 0.5rem;
 }
-.about h1 {
+.gallery__container {
+  padding: 1rem;
+}
+.gallery__container li {
+  font-family: "Rosario", sans-serif;
+  font-size: 0.9rem;
+}
+.gallery__container img {
+  width: 100%;
+}
+.gallery__container a,
+.gallery__container h3 {
   color: rgba(103, 93, 71, 0.877);
-  text-align: center;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+  font-weight: 300;
 }
-.about p {
-  max-width: 500px;
-}
+
 /**media query**/
 @media screen and (min-width: 650px) {
   .navbar__dropdown {
@@ -394,5 +402,4 @@ footer .navbar__logotype {
     align-items: center;
     justify-content: space-between;
   }
- 
 }
